@@ -20,7 +20,7 @@ Features:
 Demo
 ====
 
-**[DEMO](xn----dtbfdq4acgb0al.xn--p1ai)**
+**[DEMO](http://xn----dtbfdq4acgb0al.xn--p1ai)**
 
 Usage
 =====
@@ -53,7 +53,7 @@ $('.counter').counterUp();
 $('.counter').counterUp({
     delay: 10,
     time: 1000,
-	comma: ' '
+    comma: ' '
 });
 ```
 
