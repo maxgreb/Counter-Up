@@ -14,7 +14,8 @@
     // Defaults
     var settings = $.extend({
         'time': 400,
-        'delay': 10
+        'delay': 10,
+        'comma': ','
     }, options);
 
     return this.each(function(){
@@ -27,8 +28,8 @@
             var nums = [];
             var divisions = $settings.time / $settings.delay;
             var num = $this.text();
-            var isComma = /[0-9]+,[0-9]+/.test(num);
-            num = num.replace(/,/g, '');
+            var isComma = RegExp("[0-9]+"+$settings.comma+"[0-9]+").test(num);
+            num = num.replace( RegExp(""+$settings.comma+"","g"), '');
             var isInt = /^[0-9]+$/.test(num);
             var isFloat = /^[0-9]+\.[0-9]+$/.test(num);
             var decimalPlaces = isFloat ? (num.split('.')[1] || []).length : 0;
@@ -47,7 +48,7 @@
                 // Preserve commas if input had commas
                 if (isComma) {
                     while (/(\d+)(\d{3})/.test(newNum.toString())) {
-                        newNum = newNum.toString().replace(/(\d+)(\d{3})/, '$1'+','+'$2');
+                        newNum = newNum.toString().replace(/(\d+)(\d{3})/, '$1'+$settings.comma+'$2');
                     }
                 }
 
