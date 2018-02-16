@@ -6,6 +6,7 @@ Counter-Up is a jQuery plugin that *animates* a number from zero (counting up to
 * integers `12345`
 * floats `0.1234`
 * formatted numbers `1,234,567.00`
+* add setting: comma separator
 
 Features:
 
@@ -19,7 +20,7 @@ Features:
 Demo
 ====
 
-**[DEMO](http://bfintal.github.io/Counter-Up/demo/demo.html)**
+**[DEMO](xn----dtbfdq4acgb0al.xn--p1ai)**
 
 Usage
 =====
@@ -34,6 +35,7 @@ Usage
 **HTML**
 
 ```
+<span class="counter">1 234 567.00</span>
 <span class="counter">1,234,567.00</span>
 <span>$</span><span class="counter">1.99</span>
 <span class="counter">12345</span>
@@ -50,7 +52,8 @@ $('.counter').counterUp();
 ```
 $('.counter').counterUp({
     delay: 10,
-    time: 1000
+    time: 1000,
+	comma: ' '
 });
 ```
 
